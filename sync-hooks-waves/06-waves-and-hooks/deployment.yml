@@ -4,6 +4,9 @@ kind: Deployment
 metadata:
   name: simple-deployment
   namespace: example06
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "20" 
 spec:
   replicas: 1
   selector:
